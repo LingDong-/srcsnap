@@ -1,0 +1,24 @@
+{
+  "name": "srcsnap-node",
+  "version": "0.0.2",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "electron main.js",
+    "build": "npx electron-packager . srcsnap --platform=darwin --arch=arm64 --electronVersion=16.0.5 --overwrite"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "glob": "^7.2.0",
+    "menubar": "^9.1.1"
+  }, 
+  "mac": {
+    "extendInfo": {
+      "LSUIElement": "true"
+    }
+  },
+  "devDependencies": {
+    "electron-packager": "^15.4.0"
+  }
+}

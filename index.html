@@ -1,0 +1,98 @@
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self';" />
+</head>
+<style>
+  body{
+    font-size: 12px;
+  }
+  button{
+    font-size: 12px;
+  }
+  input{
+    font-size: 10px;
+  }
+</style>
+<body style="background:whitesmoke;font-family: 'Courier New', Courier, monospace; overflow:hidden">
+
+
+
+<!-- <div id="div_screens" style="position:absolute;width:300px;height:600px;right:0px;top:0px"> -->
+  <div id="div_screen_0">
+    <button id="btn_quit">X</button>
+    <br>
+    <span>system screenshot directory</span>
+    <br>
+    <input size="38" id="inp_dirsnap" value="" spellcheck="false"/>
+    <button id="btn_dirsnap">choose...</button>
+    
+    <div style="text-align: center;">
+      <br>
+      <br>
+      <br>
+      <br>
+      <button id="btn_pwd">track project...</button>
+    </div>
+    
+  </div>
+
+  <div id="div_screen_1" style="display: none;">
+    <button id="btn_back">&lt;</button>
+    <button id="btn_cfg">⚙</button>
+    <span id="lbl_proj_title" style="font-size:14px"></span>
+    <br>
+    <div id="lbl_proj_path" style="font-size:9px;overflow:scroll;white-space: nowrap"></div>
+    <br>
+    <div id="div_snaps" style="width:3000px;height:530px; overflow:scroll"></div>
+  </div>
+
+
+  <div id="div_screen_2" style="display: none;">
+    <span id="lbl_cfg_proj_title" style="font-size:14px"></span>
+    <br>
+    <div id="lbl_cfg_proj_path" style="font-size:9px;overflow:scroll;white-space: nowrap"></div>
+    <br>
+    <span>secret copy</span>
+    <br>
+    <span style="font-size:10px">
+      (srcsnap works by storing a git-managed copy of your project in a secret folder.
+      normally you shouldn't worry about it.)
+    </span>
+    <br>
+    <button id="btn_cfg_du">calc size</button>
+    <button id="btn_cfg_show_datapwd">show in finder</button>
+    <button id="btn_cfg_nuke">☠️ nuke</button>
+    <br>
+    <span>ignore files larger than:</span>
+    <input id="inp_size_lim"/>
+    <span>MB</span>
+    <div>files/paths to ignore (supports glob patterns)</div>
+    <textarea id="inp_ignores" style="width:270px;height:170px;resize: none; "></textarea>
+    <br>
+    <span style="font-size:10px">
+      to permanently purge large files from history (and lose all snapshots!), click rebuild after changing 'ignore' settings.
+    </span>
+    <br>
+    <button id="btn_cfg_rebuild">☠️ rebuild secret copy</button>
+    <br>
+    <br>
+    <span>command history</span>
+    <br>
+    <span style="font-size:10px">
+      list of commands secretly exectued in the background while you're using the app
+    </span>
+    <textarea id="inp_cmd_hist" style="width:270px;height:70px;resize: none;font-size: 10px;white-space: pre; " spellcheck="false" readonly>
+
+    </textarea>
+    <br>
+    <br>
+    <hr>
+    <button id="btn_cfg_revert">revert</button>
+    <button id="btn_cfg_apply">apply</button>
+    <button id="btn_cfg_ok">apply & done</button>
+  </div>
+
+<!-- </div> -->
+</body>
+
+<script src="index.js"></script>
